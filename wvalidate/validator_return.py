@@ -82,8 +82,6 @@ class ValidatorReturn:
 		
 		return True
 
-
-
 	def __iter__(self):
 		yield self.success
 		yield self.errors
@@ -93,3 +91,15 @@ class ValidatorReturn:
 	
 	def __bool__(self) -> bool:
 		return bool(self.success)
+
+	def values(self):
+		if self.success:
+			return {
+				"success": True,
+				"errors": None
+			}
+		
+		return {
+			"success": False,
+			"errors": [ error.values() for error in self.errors ]
+		}

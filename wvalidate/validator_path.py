@@ -49,5 +49,5 @@ class ValidatorPath:
 
 		return f"{self_type_name}({path_str})"
 	
-	def __json__(self):
-		return list(self.__path).__str__()
+	def values(self):
+		return list(self.__path)
