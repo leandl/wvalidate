@@ -1,3 +1,4 @@
+from __future__ import annotations
 from ..validator import Validator, ValidatorReturn
 
 class NullableValidatorException(Exception):

@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import Optional, Union, List
 
 from .. import Validator, ValidatorReturn, ValidatorError, ValidatorPath
@@ -12,8 +13,8 @@ def isinstance_validator_or_list_validators(validators: object):
 	if len(validators) == 0:
 		return False
 	
-	for error in validators:
-		if not isinstance(error, Validator):
+	for validator in validators:
+		if not isinstance(validator, Validator):
 			return False
 	
 	return True
@@ -26,7 +27,7 @@ class ListValidator(Validator):
     
   def __init__(self, validators: Optional[Union[Validator, List[Validator]]] = None) -> None:
     if validators != None and not isinstance_validator_or_list_validators(validators):
-      raise ListValidatorException("the \"validators\" property must be None, ValidatorError or list of ValidatorError.")
+      raise ListValidatorException("The \"validators\" property must be None, Validator or list of Validator.")
 			
     super().__init__()
     if validators == None:

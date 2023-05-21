@@ -37,7 +37,7 @@ class ValidatorReturn:
 			self._errors = None
 		else:
 			if not isinstance_validator_error_or_list_validator_errors(errors):
-				raise ValidatorReturnException("the \"errors\" property must be ValidatorError or list of ValidatorError, when the \"success\" property is False")
+				raise ValidatorReturnException("The \"errors\" property must be ValidatorError or list of ValidatorError, when the \"success\" property is False")
 			
 			self._success = False
 			self._errors = errors if isinstance(errors, list) else [errors]
@@ -83,7 +83,7 @@ class ValidatorReturn:
 		return True
 
 
-	
+
 	def __iter__(self):
 		yield self.success
 		yield self.errors

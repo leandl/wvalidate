@@ -47,7 +47,7 @@ class StringValidator(Validator):
   
   def is_valid(self, data) -> ValidatorReturn:
     if not isinstance(data, str):
-      return ValidatorReturn(False, ValidatorError("Is not an instance of int."))
+      return ValidatorReturn(False, ValidatorError("Is not an instance of str."))
     
     if self.__equal != None and self.__equal != data:
       return ValidatorReturn(False, ValidatorError(f"The data is not equal to '{self.__equal}'."))

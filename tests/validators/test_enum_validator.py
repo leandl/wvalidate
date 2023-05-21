@@ -28,7 +28,7 @@ def test_enum_validator_not_validate():
 	]
 
 	for test, data in TESTS:
-		validator_return = ValidatorReturn(False, ValidatorError(f"is not among the options. {test}"))
+		validator_return = ValidatorReturn(False, ValidatorError(f"Is not among the options. {test}"))
 		assert EnumValidator(test).is_valid(data) == validator_return
 
 
