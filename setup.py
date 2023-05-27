@@ -5,7 +5,7 @@ with open("README.md", "r") as arq:
 
 setup(
   name='wvalidate',
-  version='0.0.3',
+  version='0.0.1',
   license='MIT License',
   author='Leandro Crispim',
   long_description=readme,
