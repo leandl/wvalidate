@@ -25,7 +25,7 @@ from wvalidate import Validate as v
 my_validator = v.string()
 
 my_validator.is_valid("Maria") # => (True, None)
-my_validator.is_valid(42) # => (False, ValidatorError)
+my_validator.is_valid(42) # => (False, [ValidatorError])
 ```
 
 Creating a dict validator
@@ -38,7 +38,7 @@ user_validator = v.dict({
 })
 
 user_validator.is_valid({ "name": "Fernanda" }) # => (True, None)
-user_validator.is_valid({ "name": 31 }) # => (False, ValidatorError)
+user_validator.is_valid({ "name": 31 }) # => (False, [ValidatorError])
 ```
 
 
@@ -98,7 +98,7 @@ v.enum([5, "FIVE"])
 my_validator_enum = v.enum([5, "FIVE"])
 
 my_validator_enum.is_valid(5) # => (True, None)
-my_validator_enum.is_valid("SIX") # => (Flase, ValidatorError)
+my_validator_enum.is_valid("SIX") # => (False, [ValidatorError])
 ```
 
 ## Nullables
@@ -118,7 +118,7 @@ my_validator_nullable = v.nullable(v.string())
 
 my_validator_nullable.is_valid("Maria") # => (True, None)
 my_validator_nullable.is_valid(None) # => (True, None)
-my_validator_nullable.is_valid(3) # => (Flase, ValidatorError)
+my_validator_nullable.is_valid(3) # => (False, [ValidatorError])
 ```
 
 ## Lists
@@ -137,7 +137,7 @@ v.list(v.dict({
 my_validator_list = v.list(v.string())
 
 my_validator_list.is_valid(["ONE", "TWO", "THREE"]) # => (True, None)
-my_validator_list.is_valid(["ONE", "TWO", 3]) # => (Flase, ValidatorError)
+my_validator_list.is_valid(["ONE", "TWO", 3]) # => (False, [ValidatorError])
 ```
 
 ## Dictionaries
@@ -173,5 +173,5 @@ user_validator = v.dict({
 })
 
 user_validator.is_valid({ "name": "Fernanda" }) # => (True, None)
-user_validator.is_valid({ "name": 31 }) # => (False, ValidatorError)
+user_validator.is_valid({ "name": 31 }) # => (False, [ValidatorError])
 ```
