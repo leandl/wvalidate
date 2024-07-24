@@ -22,11 +22,11 @@ def test_validator_return_with_errors_invalid_with_success_false(errors):
 
 def test_validator_return_intance(): 
 	validator_return_success = ValidatorReturn(True)
-	assert validator_return_success.success == True
-	assert validator_return_success.errors == None
+	assert validator_return_success.success
+	assert validator_return_success.errors is None
 	
 	validator_return_error = ValidatorReturn(False, ValidatorError("Error1"))
-	assert validator_return_error.success == False
+	assert not validator_return_error.success
 	assert len(validator_return_error.errors) == 1
 	assert validator_return_error.errors[0] == ValidatorError("Error1")
 
@@ -34,7 +34,7 @@ def test_validator_return_intance():
 		ValidatorError("Error1"),
     ValidatorError("Error2")
   ])
-	assert validator_return_errors.success == False
+	assert not validator_return_errors.success
 	assert len(validator_return_errors.errors) == 2
 	assert validator_return_errors.errors[0] == ValidatorError("Error1")
 	assert validator_return_errors.errors[1] == ValidatorError("Error2")

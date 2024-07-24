@@ -25,7 +25,7 @@ def get_error_regex(message: str) -> ValidatorReturn:
 	return ValidatorReturn(False, ValidatorError(message)) 
 
 def test_string_validator_is_instance_validator():
-	assert issubclass(StringValidator, Validator) == True
+	assert issubclass(StringValidator, Validator)
 
 @pytest.mark.parametrize("equal", [1.0, 1, True, False, [1], [""]])
 def test_string_validator_with_equal_invalid(equal):           

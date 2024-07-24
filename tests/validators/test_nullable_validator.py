@@ -16,7 +16,7 @@ class CustomValidator(Validator):
 	
 
 def test_nullable_validator_is_instance_validator():
-	assert issubclass(NullableValidator, Validator) == True
+	assert issubclass(NullableValidator, Validator)
   
 def test_nullable_validator_without_a_list_of_options_2_items():           
 	with pytest.raises(NullableValidatorException):

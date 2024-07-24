@@ -17,7 +17,7 @@ def get_error_range(min: int, max: int) -> ValidatorReturn:
 
 
 def test_integer_validator_is_instance_validator():
-	assert issubclass(IntegerValidator, Validator) == True
+	assert issubclass(IntegerValidator, Validator)
   
 
 @pytest.mark.parametrize("n", [1.0, "125", True, False, [1], [""]])

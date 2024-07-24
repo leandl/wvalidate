@@ -5,7 +5,7 @@ from wvalidate.validators.enum_validator import EnumValidator, EnumValidatorExce
 
 
 def test_enum_validator_is_instance_validator():
-	assert issubclass(EnumValidator, Validator) == True
+	assert issubclass(EnumValidator, Validator)
   
 def test_enum_validator_without_a_list_of_options_2_items():           
 	with pytest.raises(EnumValidatorException):
