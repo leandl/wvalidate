@@ -40,7 +40,7 @@ def get_return_error_is_not_dict() -> ValidatorReturn:
 
 
 def test_dict_validator_is_instance_validator():
-	assert issubclass(DictValidator, Validator) == True
+	assert issubclass(DictValidator, Validator)
 		
 @pytest.mark.parametrize("ddict_validator_format", ["S2", True, False, 1, [], [1], ["121"], {}, { "users": [] }, { "user" : {"age": None }}])
 def test_validator_return_with_ddict_validator_format_invalid(ddict_validator_format):

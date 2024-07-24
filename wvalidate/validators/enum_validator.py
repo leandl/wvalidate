@@ -10,7 +10,7 @@ class EnumValidatorException(Exception):
 class EnumValidator(Validator):
     
 	def __init__(self, options: List[Any] = None) -> None:
-		if options == None or not isinstance(options, list) or len(options) < 2:
+		if options is None or not isinstance(options, list) or len(options) < 2:
 			raise EnumValidatorException("Expected a list of options with at least 2 items")
 
 		super().__init__()

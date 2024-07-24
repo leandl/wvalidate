@@ -25,11 +25,11 @@ class DictValidatorException(Exception):
 class DictValidator(Validator):
 
   def __init__(self, dict_validator_format: DictValidatorFormat = None) -> None:
-    if dict_validator_format != None  and not isinstance_dict_validator_format(dict_validator_format):
+    if dict_validator_format is not None  and not isinstance_dict_validator_format(dict_validator_format):
       raise DictValidatorException("The 'dict_validator_format' property must be None, a dictionary of Validator, or a dictionary of lists of Validator.")
 
     super().__init__()
-    self.__dict_validator_format = dict_validator_format if dict_validator_format != None else {}
+    self.__dict_validator_format = dict_validator_format if dict_validator_format is not None else {}
 
     
   def is_valid(self, data: object) -> ValidatorReturn:

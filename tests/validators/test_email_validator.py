@@ -66,7 +66,7 @@ INVALID_EMAILS = [
 
 
 def test_email_validator_is_instance_validator():
-	assert issubclass(EmailValidator, Validator) == True
+	assert issubclass(EmailValidator, Validator)
 
 @pytest.mark.parametrize("email_valid", VALID_EMAILS)
 def test_email_validator_validate_email_valid(email_valid):

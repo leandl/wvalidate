@@ -26,11 +26,11 @@ class ListValidatorException(Exception):
 class ListValidator(Validator):
     
   def __init__(self, validators: Optional[Union[Validator, List[Validator]]] = None) -> None:
-    if validators != None and not isinstance_validator_or_list_validators(validators):
+    if validators is not None and not isinstance_validator_or_list_validators(validators):
       raise ListValidatorException("The \"validators\" property must be None, Validator or list of Validator.")
 			
     super().__init__()
-    if validators == None:
+    if validators is None:
       self.__validators = []
     else:
       self.__validators = validators if isinstance(validators, list) else [validators]

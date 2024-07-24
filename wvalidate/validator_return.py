@@ -70,7 +70,7 @@ class ValidatorReturn:
 		if self.success != _return.success:
 			return False
 		
-		if self.success == True:
+		if self.success:
 			return True
 		
 		if len(self.errors) != len(_return.errors):

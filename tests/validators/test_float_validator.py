@@ -18,7 +18,7 @@ def get_error_range(min: Union[int, float], max: Union[int, float]) -> Validator
 
 
 def test_float_validator_is_instance_validator():
-	assert issubclass(FloatValidator, Validator) == True
+	assert issubclass(FloatValidator, Validator)
   
 
 @pytest.mark.parametrize("n", ["125", True, False, [1], [""]])
